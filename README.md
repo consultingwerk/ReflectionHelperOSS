@@ -24,7 +24,10 @@ DEFINE VARIABLE oService AS RadGridViewDragDropService NO-UNDO .
 oRadGridView = NEW RadGridView () . 
 oRadGridViewElement = oRadGridView:GridViewElement  . 
 
-
+/* C#: oService = oRadGridViewElement<RadGridViewDragDropService> (); 
+   Note that C# does not require to CAST the return value due to the 
+   dynamic and at the same time static nature of the generic method
+   return type definition. */
 oService = CAST (ReflectionHelper:InvokeGenericMethod (oRadGridViewElement, 
                                                        "GetService":U,
                                                        "Telerik.WinControls.UI.RadGridViewDragDropService":U),
