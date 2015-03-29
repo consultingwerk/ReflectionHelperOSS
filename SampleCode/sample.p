@@ -52,6 +52,9 @@ oRadGridView = NEW RadGridView () .
 oRadGridViewElement = oRadGridView:GridViewElement  . 
 
 
+/* Call into RadGridViewElement:GetService<T>
+   http://www.telerik.com/help/winforms/m_telerik_wincontrols_ui_radgridviewelement_getservice__1.html */
+
 oService = CAST (ReflectionHelper:InvokeGenericMethod (oRadGridViewElement, 
                                                        "GetService":U,
                                                        "Telerik.WinControls.UI.RadGridViewDragDropService":U),
